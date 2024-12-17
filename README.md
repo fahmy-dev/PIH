@@ -1,5 +1,5 @@
 # Photo Inspiration Hub
-This project contains my final project completed for Phase 1 - Software Engineering at Moringa School.
+This is my final project completed for Phase 1 - Software Engineering at Moringa School.
 
 ## Project Description
 Photo Inspiration Hub is a web app that is lets users like, comment and save photos that they like.
