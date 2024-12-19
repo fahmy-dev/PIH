@@ -1,85 +1,180 @@
-html{
-	padding:0;
-	margin: 0;
-  min-height:100%;
-}
-header {
-    color: rgb(255, 255, 255);
-    text-align: center;
-    font-size: x-large;
+/* Global Styles */
+html, body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  height: 100%;
 }
 
-body{
-	background: #111;
-  position:relative;
-  min-height:100%;
+body {
+  font-family: "MyCustomFont", sans-serif;
+  background-color: #f9f9f9;
 }
 
+/* Font Import */
 @font-face {
-    font-family: "MyCustomFont";
-    src: url("./assets/VogueAvantGarde-Heavy/VogueAvantGarde-Heavy.otf");
-  }
+  font-family: "MyCustomFont";
+  src: url("./assets/fonts/vogue-avant-garde-book-maisfontes.3eda/vogue-avant-garde-book.otf");
+}
 
+/* Header */
+header {
+  text-align: center;
+  font-size: 2rem;
+  margin: 20px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.search-icon {
+  padding: 10px;
+  font-size: 1.2rem;
+  color: #555;
+  border-right: 1px solid #ddd;
+  background-image: url('./assets/images/search.png'); /* Set the image as background */
+  background-size: contain; /* Ensures the image fits within the container */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position: center; /* Centers the image */
+  width: 16px; /* Set a fixed width */
+  height: 16px; /* Set a fixed height */
+}
+
+
+.search-input {
+  flex: 1;
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+}
+
+.search-button {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.search-button:hover {
+  background-color: #333;
+}
+
+/* Photo Section - Masonry Grid */
 #photos {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    justify-content: center;
-    margin-top: 50px;
+  column-count: 3; /* Creates the masonry effect */
+  column-gap: 20px;
+  padding: 20px;
+}
+
+#photos > div {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  text-align: center;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Key to position the heart correctly */
+  width: 100%; /* Ensure cards take full column width */
 }
 
 #photos img {
-    width: 200px; /* Adjust the size as needed */
-    height: 250px; /* Maintain consistent card height */
-    object-fit: cover; /* Ensures the image fits within the dimensions */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: card shadow for depth */
-  }
-
-p {
-    color: rgb(255, 255, 255);
-    text-align: center;
-    font-size: small;
-    font-family: "MyCustomFont";
-  }
-
-.button{
-	width: 50px;
-	height: 50px;
-  top:50%;
-  position: fixed;
-	left: 50%;
-	margin-top: -45px;
-	margin-left: -50px;
-	border-radius: 5px;
-	background: none;
-	cursor: pointer;
-	transition: background 0.5s ease;
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
 }
 
-.active#heart:before,.active#heart:after{
-	background: red !important;
+#photos p {
+  margin: 10px;
+  font-size: 0.9rem;
+  color: #555;
 }
+
+#photos p:first-child {
+  font-weight: bold;
+  color: #000;
+}
+
+/* Heart Button */
+.button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  position: absolute; /* Ensures proper alignment */
+  bottom: 10px; /* Aligns hearts consistently to the bottom */
+  right: 10px; /* Ensures spacing from the card's edge */
+}
+
 #heart {
-    width: 100px;
-    height: 90px;
-    transition: background 0.5s ease;
+  width: 28px;
+  height: 26px;
+  transition: background 0.3s ease;
 }
+
 #heart:before,
 #heart:after {
-	transition: background 0.5s ease;
-    position: absolute;
-    content: "";
-    left: 50px;
-    top: 0;
-    width: 50px;
-    height: 80px;
-    background: dimgrey;
-    border-radius: 50px 50px 0 0;
-    transform: rotate(-45deg);
-    transform-origin: 0 100%;
+  position: absolute;
+  content: "";
+  left: 14px;
+  width: 14px;
+  height: 22px;
+  background: rgb(234, 231, 231);
+  border-radius: 50% 50% 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+  transition: background 0.3s ease;
 }
+
 #heart:after {
-    left: 0;
-    transform: rotate(45deg);
-    transform-origin :100% 100%;
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+.active#heart:before,
+.active#heart:after {
+  background: red;
+}
+
+/* comment section */
+
+.leave-comment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.comments-list li {
+    padding: 8px; /* Add padding for spacing */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 0.9rem; /* Smaller font size for comments */
+    color: #333; /* Text color */
+    word-wrap: break-word; /* Ensure long words break properly */
+    text-align: left;
 }
