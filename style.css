@@ -41,12 +41,12 @@ header {
   font-size: 1.2rem;
   color: #555;
   border-right: 1px solid #ddd;
-  background-image: url('./assets/images/search.png'); /* Set the image as background */
-  background-size: contain; /* Ensures the image fits within the container */
-  background-repeat: no-repeat; /* Prevents the image from repeating */
-  background-position: center; /* Centers the image */
-  width: 16px; /* Set a fixed width */
-  height: 16px; /* Set a fixed height */
+  background-image: url('./assets/images/search.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 16px;
+  height: 16px;
 }
 
 
@@ -73,9 +73,9 @@ header {
   background-color: #333;
 }
 
-/* Photo Section - Masonry Grid */
+/* Photo Section */
 #photos {
-  column-count: 3; /* Creates the masonry effect */
+  column-count: 3;
   column-gap: 20px;
   padding: 20px;
 }
@@ -90,8 +90,8 @@ header {
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
-  position: relative; /* Key to position the heart correctly */
-  width: 100%; /* Ensure cards take full column width */
+  position: relative;
+  width: 100%;
 }
 
 #photos img {
@@ -119,14 +119,17 @@ header {
   background: none;
   cursor: pointer;
   transition: background 0.3s ease;
-  position: absolute; /* Ensures proper alignment */
-  bottom: 10px; /* Aligns hearts consistently to the bottom */
-  right: 10px; /* Ensures spacing from the card's edge */
+  position: absolute;
+  bottom: 10px;
+  right: px;
 }
 
 #heart {
   width: 28px;
   height: 26px;
+  margin: 10px auto;
+  position: relative;
+  display: block;
   transition: background 0.3s ease;
 }
 
@@ -171,10 +174,10 @@ header {
 }
 
 .comments-list li {
-    padding: 8px; /* Add padding for spacing */
-    border-radius: 4px; /* Rounded corners */
-    font-size: 0.9rem; /* Smaller font size for comments */
-    color: #333; /* Text color */
-    word-wrap: break-word; /* Ensure long words break properly */
+    padding: 8px; 
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: #333;
+    word-wrap: break-word;
     text-align: left;
 }

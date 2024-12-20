@@ -1,18 +1,21 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // helper function to render photos for each page 
     function renderPhotos(container, photo){
         const photoCard = document.createElement("div");
         photoCard.classList.add("photo-card");
+        
         photoCard.innerHTML = `
             <img src="${photo.urls.regular}" alt="${photo.alt_description}"">
             <p> ${photo.alt_description}</p>
             <a href="${photo.user.links.html}" target="_blank">${photo.user.name}</a>
-            <input type="text" class="leave-comment" placeholder="Comment">
+            <input type="text" class="leave-comment" placeholder="Leave a Comment">
             <ul class="comments-list"></ul>
             `
         likeButton(photoCard);
         container.appendChild(photoCard);
     };
     
+    // function to fetch photos for the first page from the api, which is then rendered by the helper function above
     function renderPage() {
         const photoContainer = document.querySelector("#photos")
 
@@ -32,13 +35,14 @@ document.addEventListener("DOMContentLoaded", function() {
             .catch(error => {
                 console.error("Error loading photo:", error);
             })
-        };
+    };
     renderPage();
 
+    // helper function for the like button's functionality
     function likeButton(container) {
         const heart = document.createElement("div")
         heart.id = "heart"
-        heart.classList.add = "button"
+        heart.classList.add("button");
         container.appendChild(heart);
         heart.addEventListener("click", function() {
             heart.classList.toggle("active");
@@ -46,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     };
 
+    // function to fetch whatever is searched into the search box after it is submitted, which is then fetched from the api
     function submitSearch() {
         const submit = document.querySelector(".search-button")
         
@@ -75,6 +80,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     submitSearch();
 
+    // function to append inputted comments to the comment section when the enter key is clicked
     function leaveComment() {
         const photoContainer = document.querySelector("#photos")
 
