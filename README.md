@@ -2,7 +2,7 @@
 This is my final project completed for Phase 1 - Software Engineering at Moringa School.
 
 ## Project Description
-Photo Inspiration Hub is a web app that is lets users like, comment and save photos that they like.
+Photo Inspiration Hub is a web app that lets users like photos and leave comments
 
 ## Table of Contents
 1. [Prerequisites](#prerequisites)
@@ -40,20 +40,16 @@ You should see 5 files.
 - **README.md** - Contains this readme
 
 ## How to Use it
-- ///////
+- Considering this is not using a json-server and an api instead this process is a lot more straightforward
 
-1. ////
+1. Open your terminal (control + shift + `), and type:
 
-     `/////`
+     `open index.html`
 
-- ///////
+- The web app will open in your browser automatically
 
-2. //////
-
-     `////////`
-
-- ///////
-- ////////
+- You will be greeted with the home page with the photos displayed, each with a heart button and a 'Levae a Comment' box.
+- You can click on the heart and it will turn red, indicating you have liked it and to add a comment you simply type into the box and press the enter key to add your comment to the photo.
 
 ## License
 This project is [MIT Licensed](LICENSE)
